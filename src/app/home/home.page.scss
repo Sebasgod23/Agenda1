@@ -1,0 +1,76 @@
+#container {
+  max-width: 400px;
+  width: 100%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+  border-radius: 16px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#container strong {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  display: block;
+}
+
+#container ion-button {
+  --background: #53dbb3;
+  --background-hover: #46b1b4;
+  --color: #fff;
+  margin-top: 15px;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.message-box {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #e0f7fa;
+  color: #006064;
+  border: 1px solid #006064;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+}
+
+#login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Coloca el contenido en la parte superior */
+  height: 100vh; /* Toma toda la altura de la pantalla */
+  padding-top: 10vh; /* Ajusta la posición más arriba */
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+ion-input {
+  width: 80%;
+  max-width: 400px;
+  margin-bottom: 15px;
+}
+
+ion-button {
+  width: 80%;
+  max-width: 400px;
+}
+
+.register-btn {
+  margin-top: 10px;
+}
+
+
+.register-btn {
+  width: 100%;
+  margin-top: 10px; /* Separación del botón 'Ingresar' */
+  text-align: center; /* Alineación de texto */
+}

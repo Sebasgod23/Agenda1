@@ -1,0 +1,56 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="register-wrapper">
+      <h2>Crear Cuenta</h2>
+
+      <div class="form-container">
+        <!-- Correo Electrónico -->
+        <ion-item>
+          <ion-label position="floating">Correo Electrónico</ion-label>
+          <ion-input type="email" [(ngModel)]="email" placeholder="usuario@dominio.com" (input)="validateForm()"></ion-input>
+        </ion-item>
+        <p *ngIf="email && !emailValid" class="error">Correo no válido</p>
+
+        <!-- Nombre Completo -->
+        <ion-item>
+          <ion-label position="floating">Nombre Completo</ion-label>
+          <ion-input type="text" [(ngModel)]="fullName" placeholder="Ejemplo: María López" (input)="formatFullName()"></ion-input>
+        </ion-item>
+
+        <!-- Nombre de Usuario -->
+        <ion-item>
+          <ion-label position="floating">Nombre de Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="username" placeholder="TuUsuario" (input)="validateUsername()"></ion-input>
+        </ion-item>
+        <p *ngIf="usernameError" class="error">{{ usernameError }}</p>
+
+        <!-- Contraseña -->
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password" placeholder="********" (input)="validatePassword()"></ion-input>
+        </ion-item>
+        <p *ngIf="passwordError" class="error">{{ passwordError }}</p>
+
+        <!-- Confirmar Contraseña -->
+        <ion-item>
+          <ion-label position="floating">Confirmar Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="confirmPassword" placeholder="********" (input)="validatePassword()"></ion-input>
+        </ion-item>
+        <p *ngIf="passwordMismatch" class="error">Las contraseñas no coinciden.</p>
+
+        <!-- Fecha de Nacimiento -->
+        <ion-item>
+          <ion-label position="floating">Fecha de Nacimiento</ion-label>
+          <ion-datetime display-format="DD MMMM YYYY" picker-format="DD MMMM YYYY" [(ngModel)]="birthDate" (ionChange)="validateBirthDate()"></ion-datetime>
+        </ion-item>
+        <p *ngIf="birthDateError" class="error">{{ birthDateError }}</p>
+
+        <!-- Botones -->
+        <ion-button expand="full" [disabled]="!formValid" (click)="registerUser()">Registrarse</ion-button>
+        <ion-button expand="full" fill="clear" (click)="navCtrl.navigateBack('/home')">
+          ¿Ya tienes cuenta? Iniciar sesión
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
