@@ -86,7 +86,7 @@ export class RegisterPage {
     if (userExists) {
       const alert = await this.alertController.create({
         header: 'Error',
-        message: 'El usuario o el correo ya existen.',
+        message: 'El usuario o el correo ya están registrados.',
         buttons: ['OK'],
       });
       await alert.present();

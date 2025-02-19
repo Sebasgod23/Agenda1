@@ -1,17 +1,19 @@
+/* Contenedor principal */
 #container {
   max-width: 400px;
   width: 100%;
   position: absolute;
-  top: 25%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   padding: 20px;
   border-radius: 16px;
-  background: #f9f9f9;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Título */
 #container strong {
   font-size: 24px;
   color: #333;
@@ -19,6 +21,7 @@
   display: block;
 }
 
+/* Botones */
 #container ion-button {
   --background: #53dbb3;
   --background-hover: #46b1b4;
@@ -29,6 +32,16 @@
   font-size: 16px;
 }
 
+.register-btn {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 30px;
+  color: #3880ff;
+  font-size: 0.9em;
+}
+
+/* Mensaje de información */
 .message-box {
   margin-top: 20px;
   padding: 10px 15px;
@@ -40,37 +53,44 @@
   text-align: center;
 }
 
-#login-container {
+/* Fondo y centrado global */
+.login-content {
+  --background: #f4f5f8;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-start; /* Coloca el contenido en la parte superior */
-  height: 100vh; /* Toma toda la altura de la pantalla */
-  padding-top: 10vh; /* Ajusta la posición más arriba */
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
+/* Contenedor del formulario */
+.login-container {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Título del formulario */
 h2 {
+  color: #333;
   margin-bottom: 20px;
 }
 
-ion-input {
-  width: 80%;
-  max-width: 400px;
+/* Inputs */
+.input-item {
   margin-bottom: 15px;
+  --background: #f1f1f1;
+  border-radius: 10px;
+  padding: 0 10px;
 }
 
+/* Botones del formulario */
 ion-button {
-  width: 80%;
-  max-width: 400px;
-}
-
-.register-btn {
   margin-top: 10px;
-}
-
-
-.register-btn {
-  width: 100%;
-  margin-top: 10px; /* Separación del botón 'Ingresar' */
-  text-align: center; /* Alineación de texto */
+  border-radius: 10px;
 }
