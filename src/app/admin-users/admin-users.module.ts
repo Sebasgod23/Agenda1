@@ -4,19 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RegisterPageRoutingModule } from './register-routing.module';
+import { AdminUsersPageRoutingModule } from './admin-users-routing.module';
 
-import { RegisterPage } from './register.page';
+import { AdminUsersPage } from './admin-users.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RegisterPageRoutingModule
+    AdminUsersPageRoutingModule
   ],
-  declarations: [RegisterPage]
+  declarations: [AdminUsersPage]
 })
-export class RegisterPageModule {}
+export class AdminUsersPageModule {}
 
  // Autor: Sebastian Andoney

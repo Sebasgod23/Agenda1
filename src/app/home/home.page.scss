@@ -9,22 +9,22 @@
   text-align: center;
   padding: 20px;
   border-radius: 16px;
-  background: #ffffff;
+  background: #265a42;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Título */
 #container strong {
-  font-size: 24px;
-  color: #333;
+  font-size: 22px;
+  color: #020202;
   margin-bottom: 20px;
   display: block;
 }
 
 /* Botones */
 #container ion-button {
-  --background: #53dbb3;
-  --background-hover: #46b1b4;
+  --background: #041a1e;
+  --background-hover: #031f20;
   --color: #fff;
   margin-top: 15px;
   border-radius: 8px;
@@ -37,7 +37,7 @@
   margin-top: 10px;
   text-align: center;
   border-radius: 30px;
-  color: #3880ff;
+  color: #eaedf0;
   font-size: 0.9em;
 }
 
@@ -46,7 +46,7 @@
   margin-top: 20px;
   padding: 10px 15px;
   background: #e0f7fa;
-  color: #006064;
+  color: #041f20;
   border: 1px solid #006064;
   border-radius: 8px;
   font-size: 16px;
@@ -54,30 +54,54 @@
 }
 
 /* Fondo y centrado global */
-.login-content {
-  --background: #f4f5f8;
+.loading-container {
+  position: fixed; /* Fija el contenedor en la pantalla */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Lo mueve al centro */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente opcional */
+  z-index: 1000; /* Asegura que esté por encima del resto */
 }
 
-/* Contenedor del formulario */
-.login-container {
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
+.app-logo {
+  width: 100px; /* Ajusta el tamaño del logo */
+  height: auto;
+  margin-bottom: 20px; /* Espacio entre el logo y la barra de carga */
 }
+
+.loading-bar {
+  width: 80%;
+  max-width: 300px;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-inner {
+  width: 0%;
+  height: 100%;
+  background: #22cec5; /* Color de la barra de carga */
+  animation: loading 2s infinite ease-in-out;
+}
+
+@keyframes loading {
+  0% { width: 0%; }
+  50% { width: 100%; }
+  100% { width: 0%; }
+}
+
 
 /* Título del formulario */
 h2 {
-  color: #333;
+  color: #010101;
   margin-bottom: 20px;
 }
 
@@ -89,8 +113,51 @@ h2 {
   padding: 0 10px;
 }
 
-/* Botones del formulario */
-ion-button {
-  margin-top: 10px;
-  border-radius: 10px;
+/* Contenedor principal centrado */
+#login-container {
+  display: flex;
+  flex-direction: column; /* Apila los elementos en columna */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Usa toda la altura de la pantalla */
+  padding: 20px;
+  background: #116658;
 }
+
+/* Ajustar tamaño de los inputs */
+ion-input {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: white;
+  border-radius: 5px;
+  --padding-start: 10px;
+}
+
+/* Botones centrados y estilizados */
+ion-button {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 10px;
+}
+
+/* Botón de registro */
+.register-btn {
+  text-align: center;
+  margin-top: 15px;
+  color: white;
+  font-size: 14px;
+}
+
+
+.small-logo {
+  width: 50px;  /* Ajusta el tamaño a lo que desees */
+  height: 50px;  /* Ajusta el tamaño a lo que desees */
+  margin: 20px 0;  /* Espaciado superior e inferior */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ // Autor: Sebastian Andoney

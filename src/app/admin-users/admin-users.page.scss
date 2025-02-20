@@ -1,0 +1,121 @@
+/* Estilos generales */
+#view-users-container, #add-user-container {
+    padding: 16px;
+  }
+  
+  ion-button.go-home-btn {
+    margin-bottom: 16px;
+  }
+  
+  /* Estilos para los formularios */
+  ion-item {
+    margin-bottom: 12px;
+  }
+  
+  ion-label {
+    font-weight: bold;
+  }
+  
+  .scroll-container {
+    padding-bottom: 16px;
+  }
+  
+  /* Estilo para los mensajes de error */
+  .error-msg {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  
+  /* Estilos del contenedor de los usuarios */
+  ion-list {
+    margin-top: 16px;
+  }
+  
+  ion-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  ion-item:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Estilos para los botones de la edición de usuario */
+  ion-button {
+    margin-top: 16px;
+  }
+  
+  /* Modal */
+  ion-modal {
+    max-width: 500px;
+    margin: auto;
+    padding: 16px;
+  }
+  
+  ion-header ion-toolbar {
+    background-color: #4CAF50;
+  }
+  
+  ion-header ion-toolbar ion-title {
+    color: white;
+  }
+  
+  ion-header ion-toolbar ion-buttons ion-button {
+    color: white;
+  }
+  
+  /* Botones dentro del modal */
+  .ion-text-center ion-button {
+    margin-top: 12px;
+    width: 48%; /* Botones del 50% de ancho */
+    border-radius: 8px; /* Bordes redondeados */
+  }
+  
+  .ion-text-center ion-button:first-child {
+    margin-right: 4%; /* Espacio entre los botones */
+  }
+  
+  .ion-text-center ion-button:last-child {
+    margin-left: 4%; /* Espacio entre los botones */
+  }
+  
+  /* Botón de cancelar (color azul) */
+  ion-button[color="light"] {
+    background-color: #007bff; /* Azul */
+    color: white;
+    border: none;
+  }
+  
+  ion-button[color="light"]:hover {
+    background-color: #0056b3; /* Azul oscuro al hacer hover */
+  }
+  
+  /* Diseño de los tabs */
+  ion-tab-bar {
+    background-color: #f4f4f4;
+    padding: 8px;
+  }
+  
+  ion-tab-button {
+    font-weight: bold;
+  }
+  
+  /* Ajustes para la vista en móviles */
+  @media (max-width: 767px) {
+    .ion-text-center ion-button {
+      width: 100%; /* Botones de ancho completo en móviles */
+      margin-top: 8px;
+    }
+  
+    .scroll-container {
+      padding-bottom: 32px;
+    }
+  
+    ion-modal {
+      margin: 8px;
+    }
+  }
+  

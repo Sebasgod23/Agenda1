@@ -15,8 +15,10 @@
 
           <ion-item>
             <ion-label position="stacked">Nombre Completo</ion-label>
-            <ion-input type="text" [(ngModel)]="fullName" placeholder="nombre" (input)="formatFullName()"></ion-input>
+            <ion-input type="text" [(ngModel)]="fullName" placeholder="nombre"></ion-input>
           </ion-item>
+          
+          
 
           <ion-item>
             <ion-label position="stacked">Usuario</ion-label>
@@ -51,7 +53,7 @@
 
           <ion-button expand="full" color="primary" [disabled]="!formValid" (click)="registerUser()">Registrarse</ion-button>
           <ion-button expand="full" fill="clear" class="register-btn" (click)="navCtrl.navigateBack('/home')">
-            ¿Ya tienes una cuenta? Inicia sesión
+          Inicia sesión
           </ion-button>
         </div>
       </ion-card-content>

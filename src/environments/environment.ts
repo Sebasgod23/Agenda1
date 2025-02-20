@@ -15,6 +15,7 @@ export const environment = {
   }
 };
 
+ // Autor: Sebastian Andoney
 
 /*
  * For easier debugging in development mode, you can import the following file

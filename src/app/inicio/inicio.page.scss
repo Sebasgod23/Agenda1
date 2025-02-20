@@ -1,0 +1,70 @@
+/* Fondo con degradado */
+ion-content {
+  --background: linear-gradient(to bottom, #1d4e65, #0f2c3d); /* Fondo degradado */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+/* Contenedor del perfil */
+#container {
+  max-width: 400px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+  border-radius: 16px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los textos dentro del contenedor */
+#container strong {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+  display: block;
+}
+
+#container p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Estilos personalizados para el botón */
+.custom-button {
+  --background: #17745c; /* Color de fondo más verde */
+  --background-hover: #0f5b47; /* Cambio al pasar el mouse */
+  --color: #fff; /* Color del texto blanco */
+  margin-top: 20px;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: bold; /* Aumenta el grosor de la fuente */
+  letter-spacing: 1px; /* Espaciado entre letras para mejor legibilidad */
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Efectos del botón al pasar el mouse */
+.custom-button:hover {
+  --background: #0f5b47;
+  --background-hover: #0b4b3d;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Efectos del botón al hacer clic */
+.custom-button:active {
+  --background: #0a4b3a; /* Fondo más oscuro al hacer clic */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ // Autor: Sebastian Andoney

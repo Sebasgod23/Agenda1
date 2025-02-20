@@ -19,3 +19,5 @@ describe('AppComponent', () => {
   });
 
 });
+
+ // Autor: Sebastian Andoney
