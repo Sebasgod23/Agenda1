@@ -18,8 +18,6 @@
             <ion-input type="text" [(ngModel)]="fullName" placeholder="nombre"></ion-input>
           </ion-item>
           
-          
-
           <ion-item>
             <ion-label position="stacked">Usuario</ion-label>
             <ion-input type="text" [(ngModel)]="username" placeholder="nombre de usuario" 
@@ -32,28 +30,34 @@
             <ion-input type="password" [(ngModel)]="password" (input)="validatePassword()"></ion-input>
           </ion-item>
           <p *ngIf="!passwordValid && password.length > 0" class="error-msg">
-            La contraseña debe contener al menos 8 caracteres, mayúscula, minúscula, un número y un carácter especial.
+            Debe contener al 8 caracteres, mayúscula, minúscula, un número y un carácter especial.
           </p>
 
           <ion-item>
-            <ion-label position="stacked">Confirmar Contraseña</ion-label>
+            <ion-label position="stacked">Confirmar la Contraseña</ion-label>
             <ion-input type="password" [(ngModel)]="confirmPassword" (input)="validateForm()"></ion-input>
           </ion-item>
           <p *ngIf="password && confirmPassword && password !== confirmPassword" class="error-msg">
             Las contraseñas no coinciden
           </p>
-
           <ion-item>
             <ion-label position="stacked">Fecha de Nacimiento</ion-label>
-            <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="birthDate" (ionChange)="validateForm()"></ion-datetime>
+            <ion-button expand="block" fill="outline" (click)="toggleCalendar()">
+              {{ showCalendar ? 'Ocultar Calendario' : 'Mostrar Calendario' }}
+            </ion-button>
+            <ion-datetime
+              *ngIf="showCalendar"
+              display-format="DD/MM/YYYY"
+              [(ngModel)]="birthDate"
+              (ionChange)="validateForm()"
+              presentation="date"
+              size="cover"
+              class="minimal-calendar"
+            ></ion-datetime>
           </ion-item>
-          <p *ngIf="!birthDateValid && birthDate" class="error-msg">
-            Debes tener al menos 18 años para registrarte.
-          </p>
-
           <ion-button expand="full" color="primary" [disabled]="!formValid" (click)="registerUser()">Registrarse</ion-button>
           <ion-button expand="full" fill="clear" class="register-btn" (click)="navCtrl.navigateBack('/home')">
-          Inicia sesión
+            Inicia sesión
           </ion-button>
         </div>
       </ion-card-content>

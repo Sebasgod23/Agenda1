@@ -27,6 +27,14 @@ const routes: Routes = [
     path: 'admin-users',
     loadChildren: () => import('./admin-users/admin-users.module').then( m => m.AdminUsersPageModule)
   },
+  {
+    path: 'camara',
+    loadChildren: () => import('./camara/camara.module').then( m => m.CamaraPageModule)
+  },
+  {
+    path: 'agenda',
+    loadChildren: () => import('./agenda/agenda.module').then( m => m.AgendaPageModule)
+  },
 ];
 
 @NgModule({

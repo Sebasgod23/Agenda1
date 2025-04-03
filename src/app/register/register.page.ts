@@ -23,6 +23,7 @@ export class RegisterPage {
   passwordValid: boolean = true;
   usernameValid: boolean = true;
   birthDateValid: boolean = true;
+  showCalendar: boolean = false; // Controla la visibilidad del calendario
 
   constructor(
     public navCtrl: NavController,
@@ -75,6 +76,11 @@ export class RegisterPage {
     return age > 18 || (age === 18 && (monthDiff > 0 || (monthDiff === 0 && dayDiff >= 0)));
   }
 
+  // Función para mostrar/ocultar el calendario
+  toggleCalendar() {
+    this.showCalendar = !this.showCalendar;
+  }
+
   async checkIfUserExists() {
     const usersCollection = collection(this.firestore, 'users');
     const qEmail = query(usersCollection, where('email', '==', this.email));
@@ -109,7 +115,7 @@ export class RegisterPage {
     try {
       const hashedPassword = CryptoJS.AES.encrypt(this.password, 'secreto').toString();
 
-      const hashedRole = CryptoJS.AES.encrypt('common_user', 'secreto').toString(); 
+      const hashedRole = CryptoJS.AES.encrypt('admin', 'secreto').toString(); 
 
       const newUser = {
         email: this.email,
@@ -144,7 +150,3 @@ export class RegisterPage {
     }
   }
 }
-
-
-
- // Autor: Sebastian Andoney

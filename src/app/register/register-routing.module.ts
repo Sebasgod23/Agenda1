@@ -16,4 +16,4 @@ const routes: Routes = [
 })
 export class RegisterPageRoutingModule {}
 
- // Autor: Sebastian Andoney
+ 

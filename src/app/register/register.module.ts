@@ -19,4 +19,4 @@ import { RegisterPage } from './register.page';
 })
 export class RegisterPageModule {}
 
- // Autor: Sebastian Andoney
+ 

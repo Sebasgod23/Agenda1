@@ -29,6 +29,8 @@ export class HomePage implements OnInit {
     this.checkTokenAndRedirect();
     this.showLoadingInit();
   }
+
+  // Verifica si existe un token en el almacenamiento local y redirige si es válido
   checkTokenAndRedirect() {
     const token = localStorage.getItem('authToken');
     if (token) {
@@ -36,6 +38,7 @@ export class HomePage implements OnInit {
     }
   }
 
+  // Muestra un mensaje temporal en la interfaz
   showMessage() {
     this.messageVisible = true;
     setTimeout(() => {
@@ -43,16 +46,19 @@ export class HomePage implements OnInit {
     }, 5000);
   }
 
+  // Navega a la página de registro
   goToRegister() {
     this.navCtrl.navigateForward('/register');
   }
 
+  // Valida que los campos de usuario y contraseña sean correctos
   validateFields() {
     this.username = this.username.toLowerCase().trim();
     this.password = this.password.trim();
     this.isValid = this.username !== '' && this.password !== '' && !this.username.includes(' ') && !this.password.includes(' ');
   }
 
+  // Muestra una animación de carga inicial
   async showLoadingInit() {
     this.isLoading = true;
     setTimeout(() => {
@@ -60,6 +66,7 @@ export class HomePage implements OnInit {
     }, 3000);
   }
 
+  // Maneja el proceso de inicio de sesión
   async login() {
     this.validateFields();
 
@@ -83,7 +90,6 @@ export class HomePage implements OnInit {
       const decryptedPassword = this.decryptPassword(encryptedPassword); 
 
       if (decryptedPassword === this.password) {
-
         const decryptedRole = this.getDecryptedRole(userDoc['role']);
         
         const permissions = await this.getRolePermissions(decryptedRole); 
@@ -99,9 +105,8 @@ export class HomePage implements OnInit {
         localStorage.setItem('authToken', token);  
 
         await this.updateLastLogin(userDoc['username']);
-
         await this.showLoadingLoginSuccess();
-        this.navCtrl.navigateForward('/inicio');
+        this.navCtrl.navigateForward('/agenda');
       } else {
         const alert = await this.alertController.create({
           header: 'Error',
@@ -122,51 +127,37 @@ export class HomePage implements OnInit {
     this.isLoading = false;
   }
 
+  // Desencripta la contraseña almacenada
   decryptPassword(encryptedPassword: string): string {
     try {
       const bytes = CryptoJS.AES.decrypt(encryptedPassword, 'secreto');
-      const decryptedPassword = bytes.toString(CryptoJS.enc.Utf8);
-  
-      if (!decryptedPassword) {
-        throw new Error("Desencriptación fallida");
-      }
-  
-      return decryptedPassword;
+      return bytes.toString(CryptoJS.enc.Utf8);
     } catch (error) {
       console.error("Error al desencriptar la contraseña:", error);
       return ''; 
     }
   }
 
+  // Desencripta el rol almacenado
   getDecryptedRole(encryptedRole: string): string {
     try {
       const bytes = CryptoJS.AES.decrypt(encryptedRole, 'secreto');
-      const decryptedRole = bytes.toString(CryptoJS.enc.Utf8);
-  
-      if (!decryptedRole) {
-        throw new Error("Desencriptación fallida");
-      }
-  
-      return decryptedRole;
+      return bytes.toString(CryptoJS.enc.Utf8);
     } catch (error) {
       console.error("Error al desencriptar el rol:", error);
       return ''; 
     }
   }
 
+  // Obtiene los permisos según el rol del usuario
   async getRolePermissions(role: string): Promise<string[]> {
     const rolesCollection = collection(this.firestore, 'rol');
     const q = query(rolesCollection, where('role', '==', role));
     const roleSnapshot = await getDocs(q);
-    
-    if (!roleSnapshot.empty) {
-      const roleDoc = roleSnapshot.docs[0].data();
-      return roleDoc['permissions'] || []; 
-    }
-
-    return []; 
+    return !roleSnapshot.empty ? roleSnapshot.docs[0].data()['permissions'] || [] : [];
   }
 
+  // Genera un token de autenticación para el usuario
   generateToken(user: any, permissions: string[]): string {
     const tokenData = {
       username: user.username,
@@ -174,10 +165,10 @@ export class HomePage implements OnInit {
       permissions: permissions,
       expiration: new Date().getTime() + (60 * 60 * 1000), 
     };
-
     return CryptoJS.AES.encrypt(JSON.stringify(tokenData), 'secreto').toString(); 
   }
 
+  // Actualiza el último inicio de sesión del usuario
   async updateLastLogin(username: string) {
     const usersCollection = collection(this.firestore, 'users');
     const q = query(usersCollection, where('username', '==', username));
@@ -185,30 +176,20 @@ export class HomePage implements OnInit {
     
     if (!userSnapshot.empty) {
       const userDoc = userSnapshot.docs[0];
-      const userRef = doc(this.firestore, 'users', userDoc.id);
-      
-      await updateDoc(userRef, {
-        lastLogin: new Date(), 
-      });
+      await updateDoc(doc(this.firestore, 'users', userDoc.id), { lastLogin: new Date() });
     }
   }
 
+  // Muestra animación de carga al iniciar sesión
   async showLoadingLoginSuccess() {
     const loading = await this.loadingController.create({
       spinner: 'crescent',
       message: 'Verificando credenciales...',
       duration: 3000,
-      cssClass: 'login-success-loading',
     });
-
     await loading.present();
-    setTimeout(() => {
-      this.isLoading = false;
-      loading.dismiss();
-    }, 3000);
+    setTimeout(() => { this.isLoading = false; loading.dismiss(); }, 3000);
   }
 }
 
- // Autor: Sebastian Andoney
-
- 
+// Autor: Sebastian Andoney

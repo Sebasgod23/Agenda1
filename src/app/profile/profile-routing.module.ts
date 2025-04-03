@@ -16,4 +16,4 @@ const routes: Routes = [
 })
 export class ProfilePageRoutingModule {}
 
- // Autor: Sebastian Andoney
+ // Autor: Sebastian Andoneyñ

@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'hola-mundo',
+  appId: 'com.sebas.kairos',
+  appName: 'kairos',
   webDir: 'www'
 };
 

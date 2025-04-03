@@ -15,5 +15,3 @@ describe('InicioPage', () => {
     expect(component).toBeTruthy();
   });
 });
-
- // Autor: Sebastian Andoney

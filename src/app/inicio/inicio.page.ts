@@ -31,13 +31,10 @@ export class InicioPage implements OnInit {
     this.token = token;
 
     const decryptedToken = this.decryptToken(token);
-
     if (decryptedToken) {
       this.role = this.decryptRole(decryptedToken.role);
       this.permissions = decryptedToken.permissions || [];
-
       this.isTokenValid = true;
-
       this.isAdmin = this.role === 'admin';
     } else {
       this.navCtrl.navigateBack('/home');
@@ -49,12 +46,7 @@ export class InicioPage implements OnInit {
     try {
       const bytes = CryptoJS.AES.decrypt(encryptedToken, 'secreto');
       const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
-
-      if (!decryptedData) {
-        throw new Error('Desencriptación fallida');
-      }
-
-      return JSON.parse(decryptedData);
+      return decryptedData ? JSON.parse(decryptedData) : null;
     } catch (error) {
       console.error('Error al desencriptar el token:', error);
       return null;
@@ -64,13 +56,7 @@ export class InicioPage implements OnInit {
   decryptRole(encryptedRole: string): string {
     try {
       const bytes = CryptoJS.AES.decrypt(encryptedRole, 'secreto');
-      const decryptedRole = bytes.toString(CryptoJS.enc.Utf8);
-
-      if (!decryptedRole) {
-        throw new Error('Desencriptación del rol fallida');
-      }
-
-      return decryptedRole;
+      return bytes.toString(CryptoJS.enc.Utf8) || '';
     } catch (error) {
       console.error('Error al desencriptar el rol:', error);
       return '';
@@ -90,7 +76,3 @@ export class InicioPage implements OnInit {
     this.navCtrl.navigateForward('/admin-users');
   }
 }
-
-
-
- // Autor: Sebastian Andoney
