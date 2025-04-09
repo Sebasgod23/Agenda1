@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>agenda</ion-title>
@@ -11,4 +12,44 @@
       <ion-title size="large">agenda</ion-title>
     </ion-toolbar>
   </ion-header>
+=======
+<app-barra></app-barra>
+<ion-content [fullscreen]="true">
+  <div class="content-container">
+    <ion-button expand="full" (click)="openAddTaskModal()" class="centered-button">Agregar Tarea</ion-button>
+  </div>
+  <div class="content-container">
+    <h2>Tareas Programadas</h2>
+  </div>
+  <div *ngIf="tasks.length > 0">
+    <ion-grid>
+      <ion-row>
+
+        <ion-col size="12" size-md="6" size-lg="2" *ngFor="let task of tasks">
+          <ion-card class="task-card">
+
+            <!-- Franja de color superior -->
+            <div class="color-bar" [ngStyle]="{'background-color': task.color || '#ccc'}"></div>
+
+            <ion-card-header>
+              <ion-card-title>{{ task.name }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>{{ task.date }}</p>
+            </ion-card-content>
+
+            <ion-button color="primary" fill="clear" (click)="editTask(task)">
+              <ion-icon name="pencil-outline"></ion-icon>
+            </ion-button>
+            <ion-button color="danger" fill="clear" (click)="deleteTask(task)">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+          </ion-card>
+        </ion-col>
+
+
+      </ion-row>
+    </ion-grid>
+  </div>
+>>>>>>> e2d75ef (Subida de Agenda1)
 </ion-content>

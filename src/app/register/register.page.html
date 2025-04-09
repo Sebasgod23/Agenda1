@@ -4,7 +4,11 @@
       <ion-card-header>
         <ion-card-title class="title">Registro de Usuario</ion-card-title>
       </ion-card-header>
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> e2d75ef (Subida de Agenda1)
       <ion-card-content>
         <div class="scroll-container">
           <ion-item>
@@ -17,10 +21,17 @@
             <ion-label position="stacked">Nombre Completo</ion-label>
             <ion-input type="text" [(ngModel)]="fullName" placeholder="nombre"></ion-input>
           </ion-item>
+<<<<<<< HEAD
           
           <ion-item>
             <ion-label position="stacked">Usuario</ion-label>
             <ion-input type="text" [(ngModel)]="username" placeholder="nombre de usuario" 
+=======
+
+          <ion-item>
+            <ion-label position="stacked">Usuario</ion-label>
+            <ion-input type="text" [(ngModel)]="username" placeholder="nombre de usuario"
+>>>>>>> e2d75ef (Subida de Agenda1)
               (input)="removeSpaces()" (input)="validateForm()"></ion-input>
           </ion-item>
           <p *ngIf="username.includes(' ')" class="error-msg">El usuario no puede contener espacios</p>
@@ -55,7 +66,11 @@
               class="minimal-calendar"
             ></ion-datetime>
           </ion-item>
+<<<<<<< HEAD
           <ion-button expand="full" color="primary" [disabled]="!formValid" (click)="registerUser()">Registrarse</ion-button>
+=======
+          <ion-button expand="full" color="primary" (click)="registerUser()">Registrarse</ion-button>
+>>>>>>> e2d75ef (Subida de Agenda1)
           <ion-button expand="full" fill="clear" class="register-btn" (click)="navCtrl.navigateBack('/home')">
             Inicia sesión
           </ion-button>
@@ -63,4 +78,8 @@
       </ion-card-content>
     </ion-card>
   </div>
+<<<<<<< HEAD
 </ion-content>
+=======
+</ion-content>
+>>>>>>> e2d75ef (Subida de Agenda1)

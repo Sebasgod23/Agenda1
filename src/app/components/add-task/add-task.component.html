@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar Tarea</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Tarea</ion-label>
+    <ion-input [(ngModel)]="task" type="text"></ion-input>
+  </ion-item>
+  <ion-item button detail="false" (click)="openColorPicker()">
+    <ion-label>Color</ion-label>
+    <div slot="end" class="color-preview" [ngStyle]="{'background-color': selectedColor || '#ccc'}">
+    </div>
+  </ion-item>
+
+  <!-- Botón para seleccionar imagen -->
+  <ion-item button detail="false" (click)="selectImage()">
+    <ion-label>Imagen</ion-label>
+    <ion-icon slot="end" name="camera-outline"></ion-icon>
+  </ion-item>
+
+  <!-- Mostrar la imagen seleccionada -->
+  <ion-item *ngIf="selectedImage">
+    <ion-img style="width: 10%;" [src]="selectedImage" alt="Imagen seleccionada"></ion-img>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Fecha</ion-label>
+    <ion-datetime [(ngModel)]="taskDate" displayFormat="MMM DD, YYYY" min="2020-01-01"></ion-datetime>
+  </ion-item>
+</ion-content>
+<ion-footer>
+  <ion-button expand="full" (click)="addTask()" [disabled]="!task || !taskDate || !selectedColor">
+    Agregar Tarea
+  </ion-button>
+</ion-footer>
