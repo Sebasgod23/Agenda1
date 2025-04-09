@@ -1,0 +1,29 @@
+/* Fondo con degradado */
+ion-content {
+  --background: linear-gradient(to bottom, #1d4e65, #0f2c3d);
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+/* Contenedor del perfil */
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+  width: 100%; /* Hace que el contenedor ocupe el 100% del ancho */
+  max-width: 400px; /* Limita el ancho a un máximo de 400px */
+  padding: 30px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  margin: 20px auto 0; /* Agrega un margen superior para darle espacio */
+}
+
+ // Autor: Sebastian Andoney

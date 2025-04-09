@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">kairos</string>
+    <string name="title_activity_main">kairos</string>
+    <string name="package_name">com.sebas.kairos</string>
+    <string name="custom_url_scheme">com.sebas.kairos</string>
+</resources>

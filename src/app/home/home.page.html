@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true">
+  <!-- Cargando -->
+  <div *ngIf="isLoading" class="loading-container">
+    <img src="assets/icon/homero.png" alt="Logo" class="app-logo"> 
+    <div class="loading-bar">
+      <div class="loading-inner"></div>
+    </div>
+  </div>
+
+  <!-- Login Form -->
+  <div *ngIf="!isLoading" id="login-container" class="ion-text-center">
+    <!-- Imagen centrada -->
+    <img src="assets/icon/homero.png" alt="Logo" class="small-logo">
+    
+    <ion-input type="text" placeholder="Username" [(ngModel)]="username" (input)="validateFields()"></ion-input>
+    <ion-input type="password" placeholder="Password" [(ngModel)]="password" (input)="validateFields()"></ion-input>
+
+    <!-- Contenedor de botones -->
+    <div class="button-container">
+      <ion-button [disabled]="!isValid" (click)="login()">Ingresar</ion-button>
+      <ion-button fill="clear" (click)="goToRegister()" class="register-btn">Regístrate</ion-button>
+    </div>
+  </div>
+</ion-content>

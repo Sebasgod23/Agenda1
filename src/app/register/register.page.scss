@@ -1,0 +1,139 @@
+/* Fondo general */
+#register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #116658; /* Nuevo color de fondo */
+  padding: 20px;
+}
+
+/* Asegurar que ion-content maneje el scroll completo */
+ion-content {
+  --background: #116658; /* Fondo del ion-content */
+  --padding-top: 0; /* Eliminar padding superior */
+  --padding-bottom: 0; /* Eliminar padding inferior */
+  --padding-start: 0; /* Eliminar padding izquierdo */
+  --padding-end: 0; /* Eliminar padding derecho */
+  height: 100vh;
+  overflow-y: auto; /* Scroll en toda la pantalla */
+}
+
+/* Formulario */
+ion-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px; /* Bordes más redondeados */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  background: #ffffff;
+  margin: 20px 0; /* Espacio para evitar cortes al hacer scroll */
+  animation: fadeIn 1s ease-in-out; /* Animación de fade-in */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Comienza invisible */
+  }
+  to {
+    opacity: 1; /* Termina completamente visible */
+  }
+}
+
+/* Eliminar scroll interno del formulario */
+.scroll-container {
+  padding-bottom: 10px;
+}
+
+/* Estilos del título */
+.title {
+  text-align: center;
+  font-size: 1.5rem; /* Tamaño de fuente más grande */
+  font-weight: bold;
+  color: #041f20; /* Color del texto */
+  margin-bottom: 20px; /* Espacio inferior */
+}
+
+/* Botones */
+ion-button {
+  margin-top: 15px;
+  width: 100%;
+  --background: #041a1e; /* Color de fondo del botón */
+  --background-hover: #031f20; /* Color de fondo al hacer hover */
+  --color: #fff; /* Color del texto */
+  border-radius: 50px; /* Bordes completamente redondeados */
+  font-size: 14px; /* Texto más pequeño */
+  transition: transform 0.2s ease-in-out, background 0.3s ease-in-out; /* Animaciones */
+}
+
+ion-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Botón de iniciar sesión */
+.register-btn {
+  background: transparent;
+  color: #22cec5; /* Color del texto */
+  border: 2px solid #22cec5; /* Borde del botón */
+  border-radius: 50px; /* Bordes completamente redondeados */
+  transition: all 0.3s ease-in-out;
+}
+
+.register-btn:hover {
+  background: #22cec5; /* Cambia el fondo al hacer hover */
+  color: white; /* Cambia el color del texto */
+}
+
+/* Efecto de pulsación para el botón de registro */
+.register-btn:active {
+  transform: scale(0.95); /* Reduce ligeramente el tamaño al hacer clic */
+}
+
+/* Errores */
+.error-msg {
+  color: red;
+  font-size: 14px;
+  text-align: center; /* Centrar mensajes de error */
+  margin: 5px 0; /* Espacio uniforme */
+}
+
+/* Calendario */
+.minimal-calendar {
+  width: 100%;
+  max-width: 250px; /* Hacemos el calendario más pequeño */
+  margin: 10px auto; /* Centrar el calendario */
+  border: 1px solid #ddd; /* Borde sutil */
+  border-radius: 8px; /* Esquinas redondeadas */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  background-color: #fff; /* Fondo blanco */
+  font-size: 14px; /* Tamaño de fuente más pequeño */
+}
+
+/* Estilo para el botón del calendario */
+ion-button[expand="block"] {
+  margin-top: 10px;
+  width: 100%;
+  font-size: 14px; /* Tamaño de fuente más pequeño */
+  --padding-start: 8px;
+  --padding-end: 8px;
+}
+
+/* Ajustes adicionales para el ion-datetime */
+ion-datetime {
+  --background: #fff; /* Fondo blanco */
+  --background-rgb: 255, 255, 255;
+  --wheel-highlight-background: #f4f4f4; /* Color de fondo para las ruedas */
+  --wheel-highlight-border-radius: 8px; /* Esquinas redondeadas para las ruedas */
+  --wheel-fade-background-rgb: 255, 255, 255; /* Eliminar el degradado de fondo */
+}
+
+/* Estilo para las ruedas del calendario */
+ion-datetime::part(wheel-item) {
+  font-size: 14px; /* Tamaño de fuente más pequeño para las ruedas */
+}
+
+/* Estilo para el texto seleccionado en las ruedas */
+ion-datetime::part(wheel-item active) {
+  font-weight: normal; /* Texto no en negrita */
+  color: #000; /* Color del texto seleccionado */
+}

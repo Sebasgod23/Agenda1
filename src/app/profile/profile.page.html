@@ -1,0 +1,15 @@
+<ion-content [fullscreen]="true" class="ion-text-center">
+  <div id="container" *ngIf="isTokenValid">
+    <h2>Perfil de {{ fullName }}</h2>
+    
+    <div class="profile-info">
+      <p><strong>Email:</strong> {{ email }}</p>
+      <p><strong>Rol:</strong> {{ role }}</p>
+      <p><strong>Fecha de nacimiento:</strong> {{ birthDate | date: 'dd/MM/yyyy' }}</p>
+      <p><strong>Fecha de creación:</strong> {{ createdAt | date: 'dd/MM/yyyy HH:mm' }}</p>
+      <p><strong>Último inicio de sesión:</strong> {{ lastLogin | date: 'dd/MM/yyyy HH:mm' }}</p>
+    </div>
+
+    <ion-button expand="full" (click)="goToHome()">Volver al inicio</ion-button>
+  </div>
+</ion-content>

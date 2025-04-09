@@ -1,0 +1,459 @@
+/* Contenedor principal */
+#container {
+  max-width: 400px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+  border-radius: 16px;
+  background: #265a42;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out; /* Animación de fade-in */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Comienza invisible */
+  }
+  to {
+    opacity: 1; /* Termina completamente visible */
+  }
+}
+
+/* Título */
+#container strong {
+  font-size: 22px;
+  color: #020202;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Contenedor de botones */
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Separa los botones a los extremos */
+  align-items: center; /* Centra verticalmente los botones */
+  margin-top: 20px; /* Espacio superior */
+}
+
+/* Botones */
+/* Contenedor principal */
+#container {
+  max-width: 400px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+  border-radius: 16px;
+  background: #265a42;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out; /* Animación de fade-in */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Comienza invisible */
+  }
+  to {
+    opacity: 1; /* Termina completamente visible */
+  }
+}
+
+/* Título */
+#container strong {
+  font-size: 22px;
+  color: #020202;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Contenedor de botones */
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Separa los botones a los extremos */
+  align-items: center; /* Centra verticalmente los botones */
+  margin-top: 20px; /* Espacio superior */
+}
+
+/* Botones */
+#container ion-button {
+  --background: #041a1e;
+  --background-hover: #031f20;
+  --color: #fff;
+  border-radius: 50px; /* Bordes completamente redondeados */
+  padding: 8px 16px; /* Tamaño más pequeño */
+  font-size: 14px; /* Texto más pequeño */
+  transition: transform 0.2s ease-in-out, background 0.3s ease-in-out; /* Animaciones */
+  flex: 1; /* Ocupa el espacio disponible */
+  margin: 0 5px; /* Espacio entre botones */
+  position: relative;
+  overflow: hidden; /* Para el efecto de fondo deslizante */
+}
+
+/* Botón de registro */
+.register-btn {
+  background: transparent;
+  color: #22cec5; /* Color del texto */
+  border: 2px solid #22cec5; /* Borde del botón */
+  border-radius: 50px; /* Bordes completamente redondeados */
+  transition: all 0.3s ease-in-out;
+}
+
+.register-btn:hover {
+  background: #22cec5; /* Cambia el fondo al hacer hover */
+  color: white; /* Cambia el color del texto */
+}
+
+/* Efecto de pulsación para el botón de registro */
+.register-btn:active {
+  transform: scale(0.95); /* Reduce ligeramente el tamaño al hacer clic */
+}
+
+/* Mensaje de información */
+.message-box {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #e0f7fa;
+  color: #041f20;
+  border: 1px solid #006064;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Fondo y centrado global */
+.loading-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+}
+
+.app-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: rotateLogo 2s ease-in-out infinite; /* Animación de rotación */
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.loading-bar {
+  width: 80%;
+  max-width: 300px;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-inner {
+  width: 0%;
+  height: 100%;
+  background: #22cec5;
+  animation: loading 2s infinite ease-in-out, bounce 1s infinite ease-in-out; /* Animación de carga y rebote */
+}
+
+@keyframes loading {
+  0% { width: 0%; }
+  50% { width: 100%; }
+  100% { width: 0%; }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+/* Título del formulario */
+h2 {
+  color: #010101;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.input-item {
+  margin-bottom: 15px;
+  --background: #f1f1f1;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+/* Contenedor principal centrado */
+#login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background: #116658;
+  animation: fadeIn 1s ease-in-out; /* Animación de fade-in */
+}
+
+/* Estilos para los inputs */
+ion-input {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  border-bottom: 2px solid #ccc; /* Borde inferior */
+  border-radius: 0; /* Sin bordes redondeados */
+  --padding-start: 0; /* Eliminar el padding interno */
+  font-size: 16px;
+  color: #041f20; /* Color del texto */
+  transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+/* Efecto cuando el input está enfocado */
+ion-input:focus-within {
+  border-bottom: 2px solid #22cec5; /* Borde inferior animado */
+  box-shadow: none; /* Sin sombra */
+}
+
+/* Placeholder */
+ion-input::placeholder {
+  color: #999; /* Color del placeholder */
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Placeholder al enfocar */
+ion-input:focus-within::placeholder {
+  color: #22cec5; /* Cambia el color del placeholder */
+  transform: translateY(-10px); /* Mueve el placeholder hacia arriba */
+  font-size: 12px; /* Reduce el tamaño del placeholder */
+}
+
+/* Texto dentro del input */
+ion-input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #041f20; /* Color del texto */
+  font-size: 16px;
+  padding: 0; /* Eliminar el padding interno */
+}
+
+/* Efecto de enfoque en el texto */
+ion-input input:focus {
+  opacity: 1; /* Texto completamente visible */
+}
+
+.small-logo {
+  width: 50px;
+  height: 50px;
+  margin: 20px 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  animation: rotateLogo 2s ease-in-out infinite; /* Animación de rotación */
+}
+.register-btn:hover {
+  background: #22cec5; /* Cambia el fondo al hacer hover */
+  color: white; /* Cambia el color del texto */
+}
+
+/* Efecto de pulsación para el botón de registro */
+.register-btn:active {
+  transform: scale(0.95); /* Reduce ligeramente el tamaño al hacer clic */
+}
+
+/* Mensaje de información */
+.message-box {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #e0f7fa;
+  color: #041f20;
+  border: 1px solid #006064;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Fondo y centrado global */
+.loading-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+}
+
+.app-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: rotateLogo 2s ease-in-out infinite; /* Animación de rotación */
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.loading-bar {
+  width: 80%;
+  max-width: 300px;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-inner {
+  width: 0%;
+  height: 100%;
+  background: #22cec5;
+  animation: loading 2s infinite ease-in-out, bounce 1s infinite ease-in-out; /* Animación de carga y rebote */
+}
+
+@keyframes loading {
+  0% { width: 0%; }
+  50% { width: 100%; }
+  100% { width: 0%; }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+/* Título del formulario */
+h2 {
+  color: #010101;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.input-item {
+  margin-bottom: 15px;
+  --background: #f1f1f1;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+/* Contenedor principal centrado */
+#login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background: #116658;
+  animation: fadeIn 1s ease-in-out; /* Animación de fade-in */
+}
+
+/* Estilos para los inputs */
+ion-input {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  border-bottom: 2px solid #ccc; /* Borde inferior */
+  border-radius: 0; /* Sin bordes redondeados */
+  --padding-start: 0; /* Eliminar el padding interno */
+  font-size: 16px;
+  color: #041f20; /* Color del texto */
+  transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+/* Efecto cuando el input está enfocado */
+ion-input:focus-within {
+  border-bottom: 2px solid #22cec5; /* Borde inferior animado */
+  box-shadow: none; /* Sin sombra */
+}
+
+/* Placeholder */
+ion-input::placeholder {
+  color: #999; /* Color del placeholder */
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Placeholder al enfocar */
+ion-input:focus-within::placeholder {
+  color: #22cec5; /* Cambia el color del placeholder */
+  transform: translateY(-10px); /* Mueve el placeholder hacia arriba */
+  font-size: 12px; /* Reduce el tamaño del placeholder */
+}
+
+/* Texto dentro del input */
+ion-input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #041f20; /* Color del texto */
+  font-size: 16px;
+  padding: 0; /* Eliminar el padding interno */
+}
+
+/* Efecto de enfoque en el texto */
+ion-input input:focus {
+  opacity: 1; /* Texto completamente visible */
+}
+
+.small-logo {
+  width: 50px;
+  height: 50px;
+  margin: 20px 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  animation: rotateLogo 2s ease-in-out infinite; /* Animación de rotación */
+}

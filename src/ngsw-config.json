@@ -1,0 +1,18 @@
+
+
+
+{
+    "assetGroups": [
+      {
+        "name": "all-in-one",
+        "installMode": "prefetch",
+        "updateMode": "prefetch",
+        "resources": {
+          "files": [
+            "/**/*"
+          ]
+        }
+      }
+    ]
+  }
+  
